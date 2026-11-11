@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2eee5">
+  <meta name="description" content="Monserrat Ink, estúdio de tatuagem em Poços de Caldas. Conheça os trabalhos e peça seu agendamento pelo WhatsApp.">
+  <title>Monserrat Ink — Tatuagem autoral em Poços de Caldas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f2eee5;
+      --ink: #171815;
+      --muted: #6d6c65;
+      --red: #b63d2b;
+      --line: rgba(23, 24, 21, .22);
+      --mono: "DM Mono", monospace;
+      --sans: "DM Sans", sans-serif;
+      --serif: "Playfair Display", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(23,24,21,.018) 6px);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .page { width: min(1440px, 100%); margin: 0 auto; padding: 0 5.2vw; }
+    .topbar {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .wordmark { text-decoration: none; line-height: .9; }
+    .wordmark strong { display: block; font-size: 15px; font-weight: 700; letter-spacing: .06em; }
+    .wordmark span { font: 10px var(--mono); letter-spacing: .16em; }
+    .top-meta { display: flex; align-items: center; gap: 28px; font: 10px var(--mono); text-transform: uppercase; }
+    .top-meta a { text-decoration: none; }
+    .top-meta a:hover { color: var(--red); }
+    .top-cta { padding: 12px 16px; border: 1px solid var(--ink); transition: background .2s, color .2s; }
+    .top-cta:hover { color: var(--paper) !important; background: var(--ink); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr); gap: 6vw; padding: 72px 0 80px; align-items: center; }
+    .eyebrow, .section-kicker { font: 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--red); }
+    .eyebrow::before { content: ""; width: 30px; border-top: 1px solid currentColor; }
+    h1 { max-width: 720px; margin: 26px 0 22px; font: 600 clamp(56px, 7.6vw, 108px)/.93 var(--serif); }
+    h1 em { color: var(--red); font-weight: 500; }
+    .intro { max-width: 400px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+    .hero-actions { display: flex; align-items: center; gap: 23px; margin-top: 32px; }
+    .button { display: inline-flex; min-height: 50px; padding: 0 20px; justify-content: center; align-items: center; gap: 12px; color: var(--paper); background: var(--red); border: 1px solid var(--red); text-decoration: none; font-size: 12px; font-weight: 600; transition: background .2s, color .2s; }
+    .button:hover { color: var(--red); background: transparent; }
+    .text-link { font-size: 12px; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .rating { display: flex; align-items: center; gap: 12px; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); width: min(390px, 100%); }
+    .rating-score { font: 29px var(--serif); }
+    .rating-stars { color: var(--red); letter-spacing: 0; font-size: 13px; }
+    .rating small { display: block; margin-top: 2px; color: var(--muted); font: 10px var(--mono); }
+    .hero-art { position: relative; width: min(100%, 470px); justify-self: end; padding: 0 22px 22px 0; }
+    .hero-art::before { position: absolute; content: ""; inset: 20px 0 0 20px; border: 1px solid var(--red); }
+    .hero-art img { position: relative; display: block; width: 100%; aspect-ratio: .73; object-fit: cover; object-position: center 42%; filter: saturate(.82); }
+    .image-note { position: absolute; z-index: 1; bottom: 35px; left: -40px; padding: 12px 16px; color: var(--paper); background: var(--ink); font: 10px var(--mono); text-transform: uppercase; }
+    .photo-credit { position: absolute; right: 28px; bottom: -3px; z-index: 2; font: 9px var(--mono); }
+    .photo-credit a { text-decoration: none; }
+    .photo-credit a:hover { color: var(--red); }
+    .ticker { overflow: hidden; color: var(--paper); background: var(--ink); }
+    .ticker-inner { display: flex; justify-content: space-between; gap: 24px; padding: 15px 0; white-space: nowrap; font: 10px var(--mono); text-transform: uppercase; }
+    .ticker b { color: #e58771; font-weight: 400; }
+    .work { padding: 84px 0 92px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; margin-bottom: 28px; }
+    .section-head h2, .booking-copy h2 { margin: 10px 0 0; font: 500 clamp(38px, 5vw, 64px)/1 var(--serif); }
+    .section-kicker { color: var(--red); }
+    .section-head p { max-width: 250px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .gallery { display: grid; grid-template-columns: 1.1fr .8fr .8fr; gap: 14px; align-items: start; }
+    .gallery figure { margin: 0; }
+    .gallery figure:nth-child(2) { margin-top: 48px; }
+    .gallery figure:nth-child(3) { margin-top: 96px; }
+    .gallery img { display: block; width: 100%; height: clamp(240px, 31vw, 430px); object-fit: cover; background: #d3cec4; filter: saturate(.82); }
+    .gallery figure:nth-child(2) img { object-position: center 25%; }
+    .gallery figure:nth-child(3) img { object-position: center 40%; }
+    .gallery figcaption { display: flex; justify-content: space-between; padding-top: 9px; font: 9px var(--mono); text-transform: uppercase; }
+    .booking { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8vw; padding: 76px 0 82px; border-top: 1px solid var(--line); }
+    .booking-copy { position: sticky; top: 24px; align-self: start; }
+    .booking-copy p { max-width: 350px; margin: 18px 0 28px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .contact-line { padding-top: 18px; border-top: 1px solid var(--line); font: 10px var(--mono); line-height: 1.8; }
+    .contact-line a { text-decoration: none; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font: 10px var(--mono); text-transform: uppercase; }
+    .field input, .field select, .field textarea { width: 100%; padding: 12px 0; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; outline: 0; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--red); }
+    .field textarea { min-height: 68px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: #99958b; }
+    .form-bottom { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-top: 26px; }
+    .form-bottom small { max-width: 220px; color: var(--muted); font-size: 10px; line-height: 1.5; }
+    .form-bottom .button { cursor: pointer; }
+    .reviews { display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .review { padding: 25px 24px 28px 0; }
+    .review + .review { padding-left: 24px; border-left: 1px solid var(--line); }
+    .review .rating-stars { font-size: 11px; }
+    .review blockquote { min-height: 65px; margin: 13px 0 17px; font: italic 17px/1.4 var(--serif); }
+    .review cite { font: 9px var(--mono); color: var(--muted); text-transform: uppercase; font-style: normal; }
+    footer { display: flex; align-items: center; justify-content: space-between; padding: 28px 0 34px; font: 9px var(--mono); text-transform: uppercase; }
+    footer a { text-decoration: none; }
+    .footer-name { font: 500 18px var(--serif); text-transform: none; }
+    @media (min-width: 1500px) { .page { padding-right: 75px; padding-left: 75px; } }
+    @media (max-width: 760px) {
+      .page { padding: 0 22px; }
+      .topbar { min-height: 70px; }
+      .top-meta { gap: 14px; }
+      .top-meta > a:not(.top-cta) { display: none; }
+      .top-cta { padding: 10px 11px; font-size: 9px; }
+      .hero { grid-template-columns: 1fr; gap: 38px; padding: 52px 0 58px; }
+      h1 { max-width: 560px; font-size: clamp(57px, 15vw, 90px); }
+      .hero-art { width: min(86%, 410px); margin-right: 10px; }
+      .hero-art img { aspect-ratio: .84; }
+      .image-note { left: -16px; }
+      .ticker-inner { justify-content: flex-start; }
+      .ticker-inner span:nth-child(n+4) { display: none; }
+      .work { padding: 62px 0 68px; }
+      .section-head { align-items: start; flex-direction: column; gap: 13px; }
+      .gallery { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .gallery figure:first-child { grid-column: 1 / -1; }
+      .gallery figure:nth-child(2), .gallery figure:nth-child(3) { margin-top: 0; }
+      .gallery img { height: 55vw; max-height: 380px; }
+      .gallery figure:first-child img { height: 94vw; max-height: 490px; }
+      .booking { grid-template-columns: 1fr; gap: 35px; padding: 60px 0; }
+      .booking-copy { position: static; }
+      .reviews { grid-template-columns: 1fr; }
+      .review, .review + .review { padding: 20px 0; border-left: 0; }
+      .review + .review { border-top: 1px solid var(--line); }
+      .review blockquote { min-height: 0; }
+      footer { gap: 18px; flex-wrap: wrap; }
+    }
+    @media (max-width: 420px) {
+      .hero-actions { align-items: flex-start; flex-direction: column; gap: 16px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .form-bottom { align-items: flex-start; flex-direction: column; }
+      .form-bottom small { max-width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="page topbar">
+    <a class="wordmark" href="#inicio" aria-label="Monserrat Ink, início"><strong>MONSERRAT INK</strong><span>ESTÚDIO DE TATUAGEM</span></a>
+    <nav class="top-meta" aria-label="Navegação principal">
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#estudio">O estúdio</a>
+      <a class="top-cta" href="#agendar">Agendar conversa ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page hero" id="inicio">
+      <div>
+        <div class="eyebrow">Poços de Caldas · MG</div>
+        <h1>Uma ideia.<br>Na pele, <em>pra sempre.</em></h1>
+        <p class="intro">Tatuagem autoral feita com escuta, cuidado e atenção a cada detalhe. Vamos tirar seu projeto do papel?</p>
+        <div class="hero-actions">
+          <a class="button" href="#agendar">Começar meu projeto <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#trabalhos">Ver trabalhos ↓</a>
+        </div>
+        <div class="rating" aria-label="Avaliação 5,0 de 316 avaliações no Google">
+          <span class="rating-score">5,0</span>
+          <div><div class="rating-stars" aria-hidden="true">★★★★★</div><small>316 avaliações no Google</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TUhLSDlnfn4GAvxLbdP0NoxZHw-GPRzG-Gns-m8OMWbgZAVDsylZ9WujnUv6ax__0RKPKW46iMoSgWmlEWoV7DwaY4SiSuXVaPSfFy3cygLLFhTg0khFfhN0xy3TWmUdb53WIeXniD2MEu=w1179-h2078-k-no" alt="Tatuagem autoral de grande formato no braço, fotografada para a galeria do Monserrat Ink no Google Maps" fetchpriority="high">
+        <span class="image-note">Trabalho em destaque · 01</span>
+        <span class="photo-credit"><a href="https://www.google.com/maps/place/Monserrat+Ink+-+Est%C3%BAdio+de+Tatuagem/@-21.8019089,-46.5121375,17z/" target="_blank" rel="noreferrer">Foto: galeria do Google Maps ↗</a></span>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="page ticker-inner"><span>Desenho autoral</span><b>✳</b><span>Atendimento com hora marcada</span><b>✳</b><span>Poços de Caldas, MG</span><b>✳</b><span>Seu projeto começa aqui</span></div></div>
+
+    <section class="page work" id="trabalhos">
+      <div class="section-head">
+        <div><div class="section-kicker">01 / Portfólio</div><h2>Feito pra ser seu.</h2></div>
+        <p>Alguns trabalhos publicados na galeria do estúdio. Cada desenho começa numa conversa.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TUhLSDlnfn4GAvxLbdP0NoxZHw-GPRzG-Gns-m8OMWbgZAVDsylZ9WujnUv6ax__0RKPKW46iMoSgWmlEWoV7DwaY4SiSuXVaPSfFy3cygLLFhTg0khFfhN0xy3TWmUdb53WIeXniD2MEu=w1179-h2078-k-no" alt="Composição ornamental em preto e cinza tatuada no braço" loading="lazy">
+          <figcaption><span>Composição · Blackwork</span><span>01</span></figcaption>
+        </figure>
+        <figure>
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QBUsUbNE29PSaAVQabEkYXevSJlwoKmSY_clkEP-BwVX4QRMo0n9iCsGN3okyFJR9ZP880TkYCP8bTXvvBzRziPgOzmOGBooFhLHUYPveNxt_fEFzaV7jTWlNZ5ss3p0LstF_o9uqkaCZV=w1200-h1600-k-no" alt="Tatuagem delicada com elementos botânicos em um antebraço" loading="lazy">
+          <figcaption><span>Botânico · Fine line</span><span>02</span></figcaption>
+        </figure>
+        <figure>
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SbttLATn0bnSr6yhOLYwNDoEF6G8tAxPnPzLBIHZxUvWQYwra0pF5kR5YkZ4-fXS0op9FTyFuwbjFVIIeCgFOybv1KTkyAKwrlN4ETP77SCfeM-gEjprgGMEOI7jRIoiJqJkcP=w1200-h1600-k-no" alt="Tatuagem autoral fotografada no estúdio Monserrat Ink" loading="lazy">
+          <figcaption><span>Projeto autoral</span><span>03</span></figcaption>
+        </figure>
+      </div>
+      <p class="photo-credit" style="position:static; margin:18px 0 0; text-align:right"><a href="https://www.google.com/maps/place/Monserrat+Ink+-+Est%C3%BAdio+de+Tatuagem/@-21.8019089,-46.5121375,17z/" target="_blank" rel="noreferrer">Imagens da galeria pública do Monserrat Ink no Google Maps ↗</a></p>
+    </section>
+
+    <section class="page booking" id="agendar">
+      <div class="booking-copy" id="estudio">
+        <div class="section-kicker">02 / Vamos conversar</div>
+        <h2>Seu próximo projeto começa aqui.</h2>
+        <p>Conte um pouco da sua ideia. A equipe responde pelo WhatsApp para conversar sobre desenho, valores e disponibilidade.</p>
+        <div class="contact-line">
+          <div>R. Quinze, 47 · Jardim Philadelphia</div>
+          <div>Poços de Caldas · MG · 37710-330</div>
+          <a href="tel:+5535999017142">(35) 99901-7142 ↗</a>
+        </div>
+      </div>
+      <form id="booking-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Seu nome</label>
+            <input id="name" name="name" autocomplete="name" placeholder="Como podemos te chamar?" required>
+          </div>
+          <div class="field">
+            <label for="style">Estilo / ideia</label>
+            <select id="style" name="style" required>
+              <option value="" selected disabled>Escolha uma opção</option>
+              <option>Tenho uma ideia própria</option>
+              <option>Fine line</option>
+              <option>Blackwork</option>
+              <option>Floral / botânico</option>
+              <option>Quero conversar sobre estilos</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="body-area">Local do corpo</label>
+            <input id="body-area" name="body-area" placeholder="Ex.: antebraço, costas">
+          </div>
+          <div class="field">
+            <label for="timing">Quando gostaria?</label>
+            <select id="timing" name="timing">
+              <option>Tenho flexibilidade</option>
+              <option>Assim que possível</option>
+              <option>Nas próximas semanas</option>
+              <option>Estou planejando com calma</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="details">Conte mais sobre o projeto</label>
+            <textarea id="details" name="details" placeholder="Tamanho aproximado, referências ou qualquer detalhe importante"></textarea>
+          </div>
+        </div>
+        <div class="form-bottom">
+          <small>O envio abre o WhatsApp para confirmar os detalhes e a disponibilidade.</small>
+          <button class="button" type="submit">Pedir agendamento <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+    </section>
+
+    <section class="page reviews" aria-label="Avaliações de clientes">
+      <article class="review"><div class="rating-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“Profissional extremamente carismático e dedicado ao trabalho.”</blockquote><cite>Otavio Miguel Ferreira · Google</cite></article>
+      <article class="review"><div class="rating-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“Extremamente atencioso, educado e profissional.”</blockquote><cite>Phillsluks · Google</cite></article>
+      <article class="review"><div class="rating-stars" aria-label="5 estrelas">★★★★★</div><blockquote>“O trabalho do Alex é perfeito, super dedicado e atencioso.”</blockquote><cite>Carlos Henrique · Google</cite></article>
+    </section>
+  </main>
+
+  <footer class="page">
+    <a class="footer-name" href="#inicio">Monserrat Ink</a>
+    <a href="https://www.google.com/maps/place/Monserrat+Ink+-+Est%C3%BAdio+de+Tatuagem/@-21.8019089,-46.5121375,17z/" target="_blank" rel="noreferrer">Como chegar ↗</a>
+    <span>Poços de Caldas · MG</span>
+    <span>© Monserrat Ink</span>
+  </footer>
+
+  <script>
+    document.getElementById("booking-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const message = [
+        "Olá! Gostaria de conversar sobre um agendamento no Monserrat Ink.",
+        `Nome: ${form.get("name")}`,
+        `Estilo/ideia: ${form.get("style")}`,
+        `Local do corpo: ${form.get("body-area") || "A combinar"}`,
+        `Quando: ${form.get("timing")}`,
+        `Detalhes: ${form.get("details") || "Ainda vou explicar melhor"}`
+      ].join("\n");
+      window.open(`https://wa.me/5535999017142?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
